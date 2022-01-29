@@ -2,15 +2,21 @@ const request = require("request");
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
-forecast(-75.7088, 44.1545, (error, data) => {
-  console.log("Error", error);
-  console.log("Data", data);
-});
-
 // Geocoding
 // Adress lat/long weather
 
-geocode("South Carolina", (error, data) => {
+geocode("Okinawa", (error, data) => {
+  if (error) {
+    return console.log(error);
+  }
   console.log("Error", error);
   console.log("data", data);
+
+  forecast(data.latitude, data.longtitude, (error, forecasData) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log(data.location);
+    console.log(forecasData);
+  });
 });
