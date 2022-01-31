@@ -1,6 +1,10 @@
+const path = require("path");
 const express = require("express");
 
 const app = express();
+const puclicPath = path.join(__dirname, "../public");
+
+app.use(express.static(path.join(puclicPath)));
 
 app.get("", (req, res) => {
   res.send("<h1>hello</h1>");
