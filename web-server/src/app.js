@@ -3,19 +3,31 @@ const express = require("express");
 const app = express();
 
 app.get("", (req, res) => {
-  res.send("hello express");
+  res.send("<h1>hello</h1>");
 });
 
 app.get("/help", (req, res) => {
-  res.send("Help Page");
+  res.send([
+    {
+      name: "Asane",
+      age: 23,
+    },
+    {
+      name: "Adom",
+      age: 20,
+    },
+  ]);
 });
 
 app.get("/about", (req, res) => {
-  res.send("about page");
+  res.send("<h1>about page</h1>");
 });
 
 app.get("/weather", (req, res) => {
-  res.send("weather page");
+  res.send({
+    forecast: "It is snowing",
+    location: "Boston",
+  });
 });
 
 app.listen(3000, () => {
