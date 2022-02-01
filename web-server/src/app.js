@@ -8,7 +8,23 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(puclicPath)));
 
 app.get("", (req, res) => {
-  res.send("<h1>hello</h1>");
+  res.render("index", {
+    title: "weather",
+    name: "Asane mead",
+  });
+});
+
+app.get("/about", (req, res) => {
+  res.render("about", {
+    title: "about",
+  });
+});
+
+app.get("/help", (req, res) => {
+  res.render("help", {
+    title: "Help Page",
+    author: "Asane",
+  });
 });
 
 app.get("/help", (req, res) => {
