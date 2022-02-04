@@ -21,7 +21,7 @@ app.use(express.static(path.join(puclicPath)));
 
 app.get("", (req, res) => {
   res.render("index", {
-    title: "weather",
+    title: "Weather",
     name: "Asane mead",
   });
 });
