@@ -24,7 +24,7 @@ const product = {
 
 // console.log(productLabel, rating);
 
-const transacion = (type, { label, price }) => {
+const transacion = (type, { label, price = 0 } = {}) => {
   console.log(label, price);
 };
 
